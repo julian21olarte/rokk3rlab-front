@@ -1,0 +1,26 @@
+
+<div class="tasks">
+    <h1>{{task.title}}</h1>
+    <a class="btn btn-success" ng-href="#!view2">Add Task</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><button class="btn">Name</button></th>
+                <th><button class="btn">DueDate</button></th>
+                <th><button class="btn">Priority</button></th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="tk in task.tasks" ng-class="{true: 'text-danger'}[tk.dueDate < task.today]">
+                <td>{{tk.name}}</td>
+                <td>{{tk.dueDate | date}}</td>
+                <td>{{tk.priority}}</td>
+                <td>
+                    <a class="btn btn-warning" ng-href="#!updateTask/{{tk._id}}">Update</a>
+                    <button class="btn btn-danger" ng-click="task.deleteTask(tk._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

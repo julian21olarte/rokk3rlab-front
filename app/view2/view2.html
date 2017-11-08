@@ -1,0 +1,23 @@
+<h1 clasS="text-success">Add Task</h1>
+<form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="fom-group">
+        <label for="">Name: </label>
+        <input class="form-control" type="text" ng-model="task.taskName">
+      </div>
+      <br><br>
+      <div class="fom-group">
+        <label for="">DueDate: </label>
+        <input class="form-control" type="date" ng-model="task.taskDueDate">
+      </div>
+      <br><br>
+      <div class="fom-group">
+        <label for="">Priority: </label>
+        <input class="form-control" type="number" ng-model="task.taskPriority">
+      </div>
+      <br><br>
+      <button type="button" class="btn btn-success" ng-click="task.addTask()">Save</button>
+    </div>
+  </div>
+</form>
